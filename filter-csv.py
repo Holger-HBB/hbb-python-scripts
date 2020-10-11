@@ -35,7 +35,8 @@ import datetime
 import sys
 from optparse import OptionParser
 
-# Parsing options
+
+# Parsing option
 
 def get_options(parser):
     """ Define command line options."""
@@ -56,14 +57,8 @@ def get_options(parser):
     if not options.infile:
         sys.exit("Input file not specified, see --help")
 
-    if not options.column:
-        sys.exit("Filter list not specified, see --help")
-
     if not options.filterlist:
         sys.exit("Input file not specified, see --help")
-
-    if not options.filtercolumn:
-        sys.exit("Filter list not specified, see --help")
 
     if not options.outfile:
         options.outfile = 'out_' + options.infile
@@ -90,7 +85,7 @@ df2 = pandas.read_csv(filterlist)
 
 # Column to filter the input CSV filter file has been an option, setting to first column if empty
 
-if not column:
+if not filtercolumn:
     filtercolumn = df2.columns[0]
     
 # Turning CSV filter dataset column into a list
@@ -126,4 +121,4 @@ print()
 
 df.to_csv(outfile, index=False)
 
-print(str(len(df)) + ' rows have been written to' + outfile '.')
+print(str(len(df)) + ' rows have been written to ' + outfile + '.')
