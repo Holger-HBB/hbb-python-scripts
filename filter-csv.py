@@ -35,8 +35,7 @@ import datetime
 import sys
 from optparse import OptionParser
 
-
-# Parsing option
+# Parsing options
 
 def get_options(parser):
     """ Define command line options."""
